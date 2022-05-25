@@ -1,0 +1,147 @@
+{% extends "base.twig" %}
+
+{% block content %}    
+    {%  set grouphero = post.meta('hero_banner')  %}
+    {%  set groupheadings = post.meta('headline_section')  %}
+    {%  set groupfeatarticle = post.meta('featured_section')  %}
+    {%  set grouponearticle = post.meta('first_col_1')  %}
+    {%  set grouptwoarticle = post.meta('second_col_2')  %}
+    {%  set contact = post.meta('contact_form')  %}
+    {%  set imggallery = post.meta('image_grid')  %}
+
+    <div class="container-fluid hero-cont">
+		<section class="Hero-Banner">
+			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						{% if grouphero.slider_1 %}
+							<img src="{{ Image(grouphero.slider_1).src }}" class="d-block w-100" alt="...">
+						{% else %}
+							<img src="<?php echo get_template_directory_uri(); ?>/images/slider1.jpg" class="d-block w-100" alt="...">
+						{% endif %}
+					</div>
+					<div class="carousel-item">
+						{% if grouphero.slider_2 %}
+							<img src="{{ Image(grouphero.slider_2).src }}" class="d-block w-100" alt="...">
+						{% else %}
+							<img src="<?php echo get_template_directory_uri(); ?>/images/slider1.jpg" class="d-block w-100" alt="...">
+						{% endif %}
+					</div>
+					<div class="carousel-item">
+						{% if grouphero.slider_3 %}
+							<img src="{{ Image(grouphero.slider_3).src }}" class="d-block w-100" alt="...">
+						{% else %}
+							<img src="<?php echo get_template_directory_uri(); ?>/images/slider1.jpg" class="d-block w-100" alt="...">
+						{% endif %}
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="Headline-section">
+			<div class="container">
+				<div class="headline-cont">
+					<h1>{% if groupheadings.title_div %} {{groupheadings.title_div}} {% else %} Please Specify Headings {% endif %}</h1>
+					<p>{% if groupheadings.description_div %} {{groupheadings.description_div}} {% else %} Please Specify Headings {% endif %}</p>
+				</div>
+			</div>	
+		</section>
+
+		<?php // ACF Featured Article ?> 
+		<section class="Featured-Article">
+			<div class="container">
+				<div class="featured-cont">
+					<div class="col-first">
+						<img src="{{ Image(groupfeatarticle.image_feat).src }}"  class="feat-img-one"/>
+					</div>
+					<div class="col-sec">
+						<h3>{% if groupfeatarticle.title_feat %} {{groupfeatarticle.title_feat}} {% else %} Please Specify Featured Title {% endif %}</h3>
+						<small>{% if groupfeatarticle.category_feat %} {{groupfeatarticle.category_feat}} {% else %} Please Specify Category {% endif %}</small>
+						<span>{% if groupfeatarticle.subtitle_feat %} {{groupfeatarticle.subtitle_feat}} {% else %} Please Specify Subtitle {% endif %}</span>
+						<p>{% if groupfeatarticle.description_feat %} {{groupfeatarticle.description_feat}} {% else %} Please Specify Description {% endif %}</p>
+						<a href="{% if groupfeatarticle.external_feat %} {{groupfeatarticle.external_feat}} {% else %} Please Specify Link {% endif %}">read more</a>
+					</div>
+				</div>
+			</div>	
+		</section>
+
+		<section class="Featured-Article">
+			<div class="container two-cols">
+				<div class="featured-cont cols">
+					<div class="col-first">
+						<img src="{{ Image(grouponearticle.image_feat).src }}"  class="feat-img-one"/>
+					</div>
+					<div class="col-sec">
+						<h3>{% if grouponearticle.title_feat %} {{grouponearticle.title_feat}} {% else %} Please Specify Featured Title {% endif %}</h3>
+						<small>{% if grouponearticle.category_feat %} {{grouponearticle.category_feat}} {% else %} Please Specify Category {% endif %}</small>
+						<span>{% if grouponearticle.subtitle_feat %} {{grouponearticle.subtitle_feat}} {% else %} Please Specify Subtitle {% endif %}</span>
+						<p>{% if grouponearticle.description_feat %} {{grouponearticle.description_feat}} {% else %} Please Specify Description {% endif %}</p>
+					</div>
+				</div>
+				<div class="featured-cont cols">
+					<div class="col-sec alt">
+						<h3>{% if grouptwoarticle.title_feat %} {{grouptwoarticle.title_feat}} {% else %} Please Specify Featured Title {% endif %}</h3>
+						<small>{% if grouptwoarticle.category_feat %} {{grouptwoarticle.category_feat}} {% else %} Please Specify Category {% endif %}</small>
+						<span>{% if groupotwoarticle.subtitle_feat %} {{groupotwoarticle.subtitle_feat}} {% else %} Please Specify Subtitle {% endif %}</span>
+						<p>{% if grouptwoarticle.description_feat %} {{grouptwoarticle.description_feat}} {% else %} Please Specify Description {% endif %}</p>
+					</div>					
+					<div class="col-first">
+						<img src="{{ Image(grouptwoarticle.image_feat).src }}"  class="feat-img-one"/>
+					</div>
+
+				</div>
+			</div>	
+		</section>
+
+		<section class="Featured-Form">
+			<div class="container">
+				<div class="featured-cont-form">
+					<div class="col-first red">
+						<div class="contact-bg">
+							<h4>{% if contact.title_feat %} {{contact.title_feat}} {% else %} Please Specify Contact Title {% endif %}</h4>
+							<p>{% if contact.description %} {{contact.description}} {% else %} Please Specify Description {% endif %} ?></p>
+								<form action="." method="post" class="vform">
+								<fieldset>
+									<span>               
+										<label>{% if contact.first_label_input %} {{contact.first_label_input}} {% else %} First Name {% endif %}</label>
+										<input type="text" name="name" value="" id="name">
+									</span>
+									<span>
+										<label>{% if contact.sec_label_input %} {{contact.sec_label_input}} {% else %} Last Name {% endif %}</label>
+										<input type="text" name="address" value="" id="address">
+									</span>
+									<span>
+										<label>{% if contact.third_label_input %} {{contact.third_label_input}} {% else %} Email {% endif %}</label>
+										<input type="text" name="city" value="" id="city">
+									</span>
+									<span class="checkbox">
+										<input type="checkbox" name="remember" value="" id="remember"> <label>{% if contact.check_label_input %} {{contact.check_label_input}} {% else %} Please Fillout the form {% endif %}</label>
+									</span>
+								</fieldset>
+									<span><input type="submit" name="submit" value="Send" class="button"></span>
+								</form>
+							<?php get_template_part( 'social', 'social-icons' ); ?>
+						</div>
+					</div>
+					<div class="col-sec img-gallery">
+						<h4>{% if imggallery.title_feat %} {{imggallery.title_feat}} {% else %} Instagram {% endif %}</h4>
+						<p>{% if imggallery.description %} {{imggallery.description}} {% else %} Image Galleries {% endif %}</p>
+						<div class="img-grid-randon">
+							{% for i in range(1, 9) %}
+								<img src="https://picsum.photos/150/150?random={{i}}">
+							{% endfor %}	
+						</div>		
+					</div>
+				</div>
+			</div>	
+		</section>
+    </div>
+{% endblock %}
