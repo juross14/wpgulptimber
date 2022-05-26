@@ -3,9 +3,10 @@
 
 This is minimal boilerplate for wordpress theme. it was build modern method which used gulb & timber tools
 # Desktop
-<img src="https://juross14.github.io/myprofile/img/banner/Coverphoto.PNG">
+<img src="https://juross14.github.io/myprofile/img/banner/Coverphoto.PNG" width="600px">
+
 # Tablet to Mobile
-<img src="https://juross14.github.io/myprofile/img/banner/Coverphoto2.PNG">
+<img src="https://juross14.github.io/myprofile/img/banner/Coverphoto2.PNG" width="600px">
 
 ### Notes:
 - Added Plugins on repo kindly look on directory
@@ -21,11 +22,14 @@ This is minimal boilerplate for wordpress theme. it was build modern method whic
 * IE HTML5shim support
 * Bootstrap version 5 CSS Framework
 * Sass/Scss (Gulp)
+<img src="https://juross14.github.io/myprofile/img/banner/scss.PNG" width="400px">
 * Timber framework 
+<img src="https://juross14.github.io/myprofile/img/banner/timber.PNG" width="400px">
 
 ### Required Plugins
 - ACF (Advanced Custom Field)
 - Timber 
+<img src="https://juross14.github.io/myprofile/img/banner/plugins.PNG" width="400px">
 
 ### Theme Structures
 - Template Directory (Twig View)
