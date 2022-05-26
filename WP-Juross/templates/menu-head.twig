@@ -1,0 +1,89 @@
+  <div class="header vertical">  
+    <aside id="nav-vertical" class="menu-vertical">
+        <div class="container-vertical">
+                <a class="navbar-brand" href="{{ site.link }}">
+                    <img src="{{ theme.link }}/images/juross.png" class="head-logo">
+                </a>
+                <div class="call-information">
+                    <span><a href="tel:{{ site.name }}">{{ site.name }}</a> </span>
+                    <span><a href="mailto:<?php echo get_bloginfo('description');?>">{{ site.description }}</a></span>
+                </div>   
+                <div class="call-to-book">
+                    <a href="#" class="call-btn">
+                       <span class="headline-btn">Modern WP Theme</span>
+                       <span class="subline-btn">Built by Gulp and Timber</span> 
+                    </a>    
+                </div>
+                
+                <div class="navertical-flex-column" id="primary-menu">
+                        <ul class="flex-column">
+                            {% for item in menu.items %}
+                                <li class="nav-main-item {{ item.classes|join(' ') }}">
+                                    <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                                    {% if item.children %}
+                                        <ul class="nav-drop">
+                                            {% for child in item.children %}
+                                                <li class="nav-drop-item">
+                                                    <a href="{{ child.link }}">{{ child.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                </div>
+                <div class="feat-headings">
+                    <h4>Built by</h4>
+                </div>
+                <div class="featured-partners">
+                    <div>
+                        <img src="{{ theme.link }}/images/php.svg" class="Partners1">
+                        <img src="{{ theme.link }}/images/gulp.svg" class="Partners2">
+                        <img src="{{ theme.link }}/images/wp.svg " class="Partners3">
+                    </div>    
+                </div>
+        </div>
+    </aside>
+    <nav class="navbar navbar-expand-md navbar-light main-nav">
+            <div class="container-fluid hamburger-section-horizontal">
+                <a class="navbar-brand" href="<?php echo home_url(); //make logo a home link?>">
+                    <img src="{{ theme.link }}/images/juross.png" class="head-logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0 %2$s flex-column horizontal-menu">
+                        {% for item in menu.items %}
+                            <li class="nav-main-item {{ item.classes|join(' ') }}">
+                                <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                                {% if item.children %}
+                                    <ul class="nav-drop">
+                                        {% for child in item.children %}
+                                            <li class="nav-drop-item">
+                                                <a href="{{ child.link }}">{{ child.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-cont">
+                <div class="call-to-book hamburger-horizontal">
+                        <a href="#" class="call-btn">
+                       <span class="headline-btn">Modern WP Theme</span>
+                       <span class="subline-btn">Built by Gulp and Timber</span> 
+                        </a>    
+                </div>
+                <div class="call-information hamburger-horizontal">
+                    <span><a href="tel:{{ site.name }}">{{ site.name }}</a> </span>
+                    <span><a href="mailto:<?php echo get_bloginfo('description');?>">{{ site.description }}</a></span>
+                </div> 
+            </div>
+        </nav>
+    </div> 

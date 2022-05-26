@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }} >
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+<link rel="pingback" href="{{ site.pingback_url }}" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if gte IE 9 ]><html class="no-js ie9" lang="en"> <![endif]-->
+
+    <title>{{ site.name }}</title>
+
+	<meta name="description" content="Test Site" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{{ theme.link }}/images/favicon.png">
+	<link rel="apple-touch-icon" href="{{ theme.link }}/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ theme.link }}/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ theme.link }}/images/apple-touch-icon-114x114.png">
+
+	<!-- Stylesheets
+	================================================== -->
+    {{function('wp_head')}}
+</head>
