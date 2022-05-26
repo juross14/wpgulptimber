@@ -3,6 +3,10 @@
 
 This is minimal boilerplate for wordpress theme. it was build modern method which used gulb & timber tools
 
+### Notes:
+- Added Plugins on repo kindly look on directory
+- You can import both ACF & WP data in you wordpress dashboard, so that you can have some dummy data to preview the theme
+
 ### Features:
 
 * Very Easy to customise, it's basically a blank theme.
