@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["script.js"],"sourcesContent":["const testString = 'This is a test!';\r\n\r\nconsole.log(testString);\r\n\r\nconst fruits = [\r\n  'mango',\r\n  'papaya',\r\n  'lychee',\r\n];\r\n\r\nfruits.map((fruit) => {\r\n  console.log(fruit);\r\n});"],"file":"script.js"}
